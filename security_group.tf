@@ -4,11 +4,11 @@ resource "aws_security_group" "alb" {
   vpc_id      = data.aws_vpc.shared.id
 
   egress {
+    description      = "Allow all outbound traffic"
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
+    cidr_blocks      = ["1.2.3.4/32"]
   }
 
   tags = {
